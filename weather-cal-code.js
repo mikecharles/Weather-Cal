@@ -1719,13 +1719,13 @@ const weatherCal = {
     // Show the current condition symbol.
     let mainConditionStack = this.align(currentWeatherStack)
     let mainCondition = mainConditionStack.addImage(this.provideConditionSymbol(weatherData.currentCondition,this.isNight(this.now)))
-    mainCondition.imageSize = new Size(22,22)
+    mainCondition.imageSize = new Size(28, 28)
     this.tintIcon(mainCondition, this.format.largeTemp)
     mainConditionStack.setPadding(weatherSettings.showLocation ? 0 : this.padding, this.padding, 0, this.padding)
 
     // Add the temp horizontally if enabled.
     if (weatherSettings.horizontalCondition) {
-      mainConditionStack.addSpacer(5)
+      mainConditionStack.addSpacer(10)
       mainConditionStack.layoutHorizontally()
       mainConditionStack.centerAlignContent()
       const tempText = this.displayNumber(weatherData.currentTemp,"--") + "°"
